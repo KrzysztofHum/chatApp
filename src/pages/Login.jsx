@@ -7,10 +7,9 @@ function Login() {
         <span className="logo">My Chat App</span>
         <span className="title">Login</span>
         <form>
-          <input type="text" placeholder="display name" />
           <input type="email" placeholder="email" />
           <input type="password" placeholder="password" />
-          <button>Sign up</button>
+          <button>Sign in</button>
         </form>
         <p>You don't have an account? Register</p>
       </div>
