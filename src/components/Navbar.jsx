@@ -1,16 +1,18 @@
-import React from 'react'
+import { signOut } from "firebase/auth";
+import React from "react";
+import { auth } from "../firebase";
 
 function Navbar() {
   return (
-    <div className='navbar'>
+    <div className="navbar">
       <span className="logo">My chat app</span>
       <div className="user">
         <img src="" alt="" />
         <span>Krzychu</span>
-        <button>logout</button>
+        <button onClick={() => signOut(auth)}>logout</button>
       </div>
     </div>
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;

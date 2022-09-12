@@ -1,6 +1,6 @@
 import React from "react";
 import Img from "../img/img.png";
-import Attach from "../img/atach.png";
+import Attach from "../img/attach.png";
 
 function Input() {
   return (

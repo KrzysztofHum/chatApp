@@ -15,9 +15,9 @@ function Chat() {
           <img src={Add} alt="" />
           <img src={More} alt="" />
         </div>
-        <Messages />
-        <Input />
       </div>
+      <Messages />
+      <Input />
     </div>
   );
 }
