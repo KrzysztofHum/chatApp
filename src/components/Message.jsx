@@ -1,6 +1,11 @@
 import React from "react";
+import { useContext } from "react";
+import { AuthContext } from "../context/AuthContext.js";
+import { ChatContext } from "../context/ChatContext.js";
 
-function Message() {
+function Message({ message }) {
+  const { currentUser } = useContext(AuthContext);
+  const { data } = useContext(ChatContext);
   return (
     <div className="message owner">
       <div className="messageInfo">
