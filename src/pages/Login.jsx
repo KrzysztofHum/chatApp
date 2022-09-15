@@ -5,7 +5,6 @@ import { auth } from "../firebase";
 
 function Login() {
   const [err, setErr] = useState(false);
-  const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
 
@@ -21,7 +20,6 @@ function Login() {
     } catch (err) {
       console.log(err);
       setErr(true);
-      setLoading(false);
     }
   };
   return (

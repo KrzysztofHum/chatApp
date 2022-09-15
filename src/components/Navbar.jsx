@@ -1,14 +1,14 @@
+import React, { useContext } from "react";
 import { signOut } from "firebase/auth";
-import React from "react";
-import { useContext } from "react";
-import { AuthContext } from "../context/AuthContext";
 import { auth } from "../firebase";
+import { AuthContext } from "../context/AuthContext";
 
-function Navbar() {
+const Navbar = () => {
   const { currentUser } = useContext(AuthContext);
+
   return (
     <div className="navbar">
-      <span className="logo">My chat app</span>
+      <span className="logo">Lama Chat</span>
       <div className="user">
         <img src={currentUser.photoURL} alt="" />
         <span>{currentUser.displayName}</span>
@@ -16,6 +16,6 @@ function Navbar() {
       </div>
     </div>
   );
-}
+};
 
 export default Navbar;

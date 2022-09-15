@@ -1,18 +1,17 @@
-import userEvent from "@testing-library/user-event";
-import React, { useContext } from "react";
-import { useEffect } from "react";
-import { useRef } from "react";
-import { AuthContext } from "../context/AuthContext.js";
-import { ChatContext } from "../context/ChatContext.js";
+import React, { useContext, useEffect, useRef } from "react";
+import { AuthContext } from "../context/AuthContext";
+import { ChatContext } from "../context/ChatContext";
 
-function Message({ message }) {
+const Message = ({ message }) => {
   const { currentUser } = useContext(AuthContext);
   const { data } = useContext(ChatContext);
 
   const ref = useRef();
+
   useEffect(() => {
     ref.current?.scrollIntoView({ behavior: "smooth" });
   }, [message]);
+
   return (
     <div
       ref={ref}
@@ -23,7 +22,7 @@ function Message({ message }) {
           src={
             message.senderId === currentUser.uid
               ? currentUser.photoURL
-              : data.user.photoUrl
+              : data.user.photoURL
           }
           alt=""
         />
@@ -31,10 +30,10 @@ function Message({ message }) {
       </div>
       <div className="messageContent">
         <p>{message.text}</p>
-        {message.file && <img src={message.file} alt="" />}
+        {message.img && <img src={message.img} alt="" />}
       </div>
     </div>
   );
-}
+};
 
 export default Message;
